@@ -537,7 +537,8 @@
       "System.Linq >= 4.0.0-beta-23019",
       "System.Threading >= 4.0.10-beta-23019",
       "System.Runtime >= 4.0.10-beta-23019",
-      "Microsoft.CSharp >= 4.0.0-beta-23019"
+      "Microsoft.CSharp >= 4.0.0-beta-23019",
+      "FormsPlatform.DomainModels >= 1.0.0-*"
     ],
     ".NETPlatform,Version=v5.0": []
   }

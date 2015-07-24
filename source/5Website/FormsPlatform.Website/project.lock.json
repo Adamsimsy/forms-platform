@@ -4974,7 +4974,9 @@
       "Microsoft.AspNet.Mvc.TagHelpers >= 6.0.0-beta5",
       "Microsoft.AspNet.Server.IIS >= 1.0.0-beta5",
       "Microsoft.AspNet.Server.WebListener >= 1.0.0-beta5",
-      "FormsPlatform.DomainModels >= 1.0.0-*"
+      "FormsPlatform.DomainModels >= 1.0.0-*",
+      "FormsPlatform.Contracts >= 1.0.0-*",
+      "FormsPlatform.StoreProviders >= 1.0.0-*"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": []

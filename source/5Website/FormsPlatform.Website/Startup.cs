@@ -6,6 +6,8 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
+using FormsPlatform.Contracts;
+using FormsPlatform.StoreProviders;
 
 namespace FormsPlatform.Website
 {
@@ -17,6 +19,8 @@ namespace FormsPlatform.Website
         {
             // Add MVC services to the services container.
             services.AddMvc();
+
+            services.AddSingleton<IStoreProvider, StaticStoreProvider>();
         }
 
         public void Configure(IApplicationBuilder app)

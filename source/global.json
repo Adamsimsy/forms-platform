@@ -1,6 +1,8 @@
 {
     "projects": [
         "wrap",
-        "1Data"
+        "1Data",
+        "2Core",
+        "3Services"
     ]
 }

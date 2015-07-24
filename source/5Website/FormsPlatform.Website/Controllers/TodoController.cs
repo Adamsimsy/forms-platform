@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using FormsPlatform.DomainModels;
+using FormsPlatform.Contracts;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,21 +13,24 @@ namespace FormsPlatform.Website.Controllers
     [Route("api/[controller]")]
     public class TodoController : Controller
     {
-        static readonly List<TodoItem> _items = new List<TodoItem>()
+        private IStoreProvider _iStoreProvider;
+
+        public TodoController(IStoreProvider iStoreProvider)
         {
-            new TodoItem { Id = 1, Title = "First Item" }
-        };
+            _iStoreProvider = iStoreProvider;
+        }
 
         [HttpGet]
         public IEnumerable<TodoItem> GetAll()
         {
-            return _items;
+            return _iStoreProvider.GetAll();
         }
 
         [HttpGet("{id:int}", Name = "GetByIdRoute")]
         public IActionResult GetById(int id)
         {
-            var item = _items.FirstOrDefault(x => x.Id == id);
+            //var item = _items.FirstOrDefault(x => x.Id == id);
+            var item = _iStoreProvider.GetItem(id);
             if (item == null)
             {
                 return HttpNotFound();
@@ -44,8 +48,7 @@ namespace FormsPlatform.Website.Controllers
             }
             else
             {
-                item.Id = 1 + _items.Max(x => (int?)x.Id) ?? 0;
-                _items.Add(item);
+                _iStoreProvider.PutItem(item);
 
                 string url = Url.RouteUrl("GetByIdRoute", new { id = item.Id },
                     Request.Scheme, Request.Host.ToUriComponent());
@@ -58,12 +61,13 @@ namespace FormsPlatform.Website.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteItem(int id)
         {
-            var item = _items.FirstOrDefault(x => x.Id == id);
+            var item = _iStoreProvider.GetAll().FirstOrDefault(x => x.Id == id);
             if (item == null)
             {
                 return HttpNotFound();
             }
-            _items.Remove(item);
+            _iStoreProvider.DeleteItem(id);
+            //_items.Remove(item);
             return new HttpStatusCodeResult(204); // 201 No Content
         }
     }
