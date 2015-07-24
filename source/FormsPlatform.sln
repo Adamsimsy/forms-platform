@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3Services", "3Services", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4Presentation", "4Presentation", "{192F7BC5-20BE-4E74-9DAD-ED6E714BA6DF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5Websites", "5Websites", "{64277DFC-E51F-408C-864D-681355BADE0B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5Website", "5Website", "{64277DFC-E51F-408C-864D-681355BADE0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsPlatform.DomainModels", "1Data\FormsPlatform.DomainModels\FormsPlatform.DomainModels.csproj", "{0F4ADD9C-951D-489F-93D0-56B8F0086679}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsPlatform.SessionProviders", "3Services\FormsPlatform.SessionProviders\FormsPlatform.SessionProviders.csproj", "{507B72D4-4511-45E5-BBE7-868BDE1F8D52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsPlatform.StoreProviders", "3Services\FormsPlatform.StoreProviders\FormsPlatform.StoreProviders.csproj", "{925C6005-E13A-4790-9FAE-382D8017B0E9}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FormsPlatform.Website", "5Website\FormsPlatform.Website\FormsPlatform.Website.xproj", "{B3291CB2-5DE3-4DD1-82AB-59D7E1ECD51A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{925C6005-E13A-4790-9FAE-382D8017B0E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{925C6005-E13A-4790-9FAE-382D8017B0E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{925C6005-E13A-4790-9FAE-382D8017B0E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3291CB2-5DE3-4DD1-82AB-59D7E1ECD51A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3291CB2-5DE3-4DD1-82AB-59D7E1ECD51A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3291CB2-5DE3-4DD1-82AB-59D7E1ECD51A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3291CB2-5DE3-4DD1-82AB-59D7E1ECD51A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +72,6 @@ Global
 		{84AB4A99-4665-4B6C-963B-50C752617F62} = {87BEB337-4E6C-447E-943B-AF9B142A95E6}
 		{507B72D4-4511-45E5-BBE7-868BDE1F8D52} = {87BEB337-4E6C-447E-943B-AF9B142A95E6}
 		{925C6005-E13A-4790-9FAE-382D8017B0E9} = {87BEB337-4E6C-447E-943B-AF9B142A95E6}
+		{B3291CB2-5DE3-4DD1-82AB-59D7E1ECD51A} = {64277DFC-E51F-408C-864D-681355BADE0B}
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,5 @@
 D:\GIT\forms-platform\source\1Data\FormsPlatform.DomainModels\bin\Debug\FormsPlatform.DomainModels.dll
 D:\GIT\forms-platform\source\1Data\FormsPlatform.DomainModels\bin\Debug\FormsPlatform.DomainModels.pdb
-D:\GIT\forms-platform\source\1Data\FormsPlatform.DomainModels\obj\Debug\FormsPlatform.DomainModels.csprojResolveAssemblyReference.cache
 D:\GIT\forms-platform\source\1Data\FormsPlatform.DomainModels\obj\Debug\FormsPlatform.DomainModels.dll
 D:\GIT\forms-platform\source\1Data\FormsPlatform.DomainModels\obj\Debug\FormsPlatform.DomainModels.pdb
+D:\GIT\forms-platform\source\1Data\FormsPlatform.DomainModels\obj\Debug\FormsPlatform.DomainModels.csprojResolveAssemblyReference.cache
