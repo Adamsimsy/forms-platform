@@ -1,5 +1,0 @@
-D:\GIT\forms-platform\source\3Services\FormsPlatform.StoreProviders\bin\Debug\FormsPlatform.StoreProviders.dll
-D:\GIT\forms-platform\source\3Services\FormsPlatform.StoreProviders\bin\Debug\FormsPlatform.StoreProviders.pdb
-D:\GIT\forms-platform\source\3Services\FormsPlatform.StoreProviders\obj\Debug\FormsPlatform.StoreProviders.dll
-D:\GIT\forms-platform\source\3Services\FormsPlatform.StoreProviders\obj\Debug\FormsPlatform.StoreProviders.pdb
-D:\GIT\forms-platform\source\3Services\FormsPlatform.StoreProviders\obj\Debug\FormsPlatform.StoreProviders.csprojResolveAssemblyReference.cache

@@ -1,5 +1,0 @@
-D:\GIT\forms-platform\source\3Services\FormsPlatform.DecisionProviders\bin\Debug\FormsPlatform.DecisionProviders.dll
-D:\GIT\forms-platform\source\3Services\FormsPlatform.DecisionProviders\bin\Debug\FormsPlatform.DecisionProviders.pdb
-D:\GIT\forms-platform\source\3Services\FormsPlatform.DecisionProviders\obj\Debug\FormsPlatform.DecisionProviders.dll
-D:\GIT\forms-platform\source\3Services\FormsPlatform.DecisionProviders\obj\Debug\FormsPlatform.DecisionProviders.pdb
-D:\GIT\forms-platform\source\3Services\FormsPlatform.DecisionProviders\obj\Debug\FormsPlatform.DecisionProviders.csprojResolveAssemblyReference.cache
