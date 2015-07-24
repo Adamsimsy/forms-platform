@@ -1,0 +1,5 @@
+D:\GIT\forms-platform\source\2Core\FormsPlatform.Contracts\bin\Debug\FormsPlatform.Contracts.dll
+D:\GIT\forms-platform\source\2Core\FormsPlatform.Contracts\bin\Debug\FormsPlatform.Contracts.pdb
+D:\GIT\forms-platform\source\2Core\FormsPlatform.Contracts\obj\Debug\FormsPlatform.Contracts.csprojResolveAssemblyReference.cache
+D:\GIT\forms-platform\source\2Core\FormsPlatform.Contracts\obj\Debug\FormsPlatform.Contracts.dll
+D:\GIT\forms-platform\source\2Core\FormsPlatform.Contracts\obj\Debug\FormsPlatform.Contracts.pdb

@@ -1,0 +1,5 @@
+D:\GIT\forms-platform\source\3Services\FormsPlatform.BuilderProviders\bin\Debug\FormsPlatform.BuilderProviders.dll
+D:\GIT\forms-platform\source\3Services\FormsPlatform.BuilderProviders\bin\Debug\FormsPlatform.BuilderProviders.pdb
+D:\GIT\forms-platform\source\3Services\FormsPlatform.BuilderProviders\obj\Debug\FormsPlatform.BuilderProviders.csprojResolveAssemblyReference.cache
+D:\GIT\forms-platform\source\3Services\FormsPlatform.BuilderProviders\obj\Debug\FormsPlatform.BuilderProviders.dll
+D:\GIT\forms-platform\source\3Services\FormsPlatform.BuilderProviders\obj\Debug\FormsPlatform.BuilderProviders.pdb

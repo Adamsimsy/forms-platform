@@ -1,0 +1,5 @@
+D:\GIT\forms-platform\source\3Services\FormsPlatform.SessionProviders\bin\Debug\FormsPlatform.SessionProviders.dll
+D:\GIT\forms-platform\source\3Services\FormsPlatform.SessionProviders\bin\Debug\FormsPlatform.SessionProviders.pdb
+D:\GIT\forms-platform\source\3Services\FormsPlatform.SessionProviders\obj\Debug\FormsPlatform.SessionProviders.csprojResolveAssemblyReference.cache
+D:\GIT\forms-platform\source\3Services\FormsPlatform.SessionProviders\obj\Debug\FormsPlatform.SessionProviders.dll
+D:\GIT\forms-platform\source\3Services\FormsPlatform.SessionProviders\obj\Debug\FormsPlatform.SessionProviders.pdb
