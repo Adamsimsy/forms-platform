@@ -11,10 +11,15 @@
         /* jshint validthis:true */
         var vm = this;
 
-        formsetFactory.get({id : 1}, function (data) {
-            vm.forms = data.Forms;
-            vm.formSetId = data.Id;
+        formsetFactory.get({ id: 1 }, function (data) {
+            vm.formset = data;
+
+            //vm.formset.Title = "test";
+
+            //vm.formset.$save(function (data) { });
         });
+
+        
 
         activate();
 

@@ -1,5 +1,5 @@
 ﻿<div ng-controller="navigationController as vm">
-    <div class="forms" ng-repeat="form in vm.forms">
-        <a href="#{{vm.formSetId}}/{{form.Id}}">{{form.Title}}</a>
+    <div class="forms" ng-repeat="form in vm.formset.Forms">
+        <a href="#{{vm.formset.Id}}/{{form.Id}}">{{form.Title}}</a>
     </div>
 </div>
