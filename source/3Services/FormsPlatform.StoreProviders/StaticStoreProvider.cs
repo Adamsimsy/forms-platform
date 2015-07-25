@@ -4,39 +4,79 @@ using System.Linq;
 using System.Threading.Tasks;
 using FormsPlatform.Contracts;
 using FormsPlatform.DomainModels;
+using FormsPlatform.DomainModels.Forms;
 
 namespace FormsPlatform.StoreProviders
 {
     public class StaticStoreProvider : IStoreProvider
     {
-        readonly List<TodoItem> _items = new List<TodoItem>();
+        readonly List<FormSet> _items = new List<FormSet>();
 
         public StaticStoreProvider()
         {
-            _items.Add(new TodoItem { Id = 1, Title = "First Item" });
+            _items = new List<FormSet>();
+
+            _items.Add(new FormSet()
+            {
+                Id = 1,
+                Title = "My first form",
+                Forms = {
+                    new Form() { Id = 1, Title = "My first form - step 1",
+                        Fields = {
+                            new InputFormField() {  Id = 1, Label = "Step 1 input field 1", Value = "Default value for field 1" },
+                            new InputFormField() {  Id = 2, Label = "Step 1 input field 2", Value = "Default value for field 2" },
+                            new InputFormField() {  Id = 3, Label = "Step 1 input field 3", Value = "Default value for field 3" },
+                        }
+                    },
+                    new Form() { Id = 2, Title = "My first form - step 2",
+                        Fields = {
+                            new InputFormField() {  Id = 1, Label = "Step 2 input field 1", Value = "Default value for field 1" },
+                            new InputFormField() {  Id = 2, Label = "Step 2 input field 2", Value = "Default value for field 2" },
+                            new InputFormField() {  Id = 3, Label = "Step 2 input field 3", Value = "Default value for field 3" },
+                        }
+                    },
+                    new Form() { Id = 3, Title = "My first form - step 3",
+                        Fields = {
+                            new InputFormField() {  Id = 1, Label = "Step 3 input field 1", Value = "Default value for field 1" },
+                            new InputFormField() {  Id = 2, Label = "Step 3 input field 2", Value = "Default value for field 2" },
+                            new InputFormField() {  Id = 3, Label = "Step 3 input field 3", Value = "Default value for field 3" },
+                        }
+                    }
+                }
+            });
         }
 
-        public void DeleteItem(int id)
+        public void AddFormSet(FormSet item)
+        {
+            item.Id = 1 + _items.Max(x => (int?)x.Id) ?? 0;
+            _items.Add(item);
+        }
+
+        public void DeleteFormSet(int id)
         {
             var item = _items.FirstOrDefault(x => x.Id == id);
 
             _items.Remove(item);
         }
 
-        public IEnumerable<TodoItem> GetAll()
+        public IEnumerable<FormSet> GetAllFormSets()
         {
             return _items;
         }
 
-        public TodoItem GetItem(int id)
+        public Form GetForm(int id)
         {
-            return _items.FirstOrDefault(x => x.Id == id);
+            throw new NotImplementedException();
         }
 
-        public void PutItem(TodoItem item)
+        public FormField GetFormField(int id)
         {
-            item.Id = 1 + _items.Max(x => (int?)x.Id) ?? 0;
-            _items.Add(item);
+            throw new NotImplementedException();
+        }
+
+        public FormSet GetFormSet(int id)
+        {
+            return _items.FirstOrDefault(x => x.Id == id);
         }
     }
 }
