@@ -8,8 +8,10 @@
 </head>
 <body ng-app="formsClient">
 
-    <div class="container">
-        <div ng-include="'app/formset/formsetview.html'"></div>
+    <div class="container" ng-controller="formsetController as vm">
+        <h1>{{vm.formSet.Title}}</h1>
+        <div ng-include="'app/navigation/navigationview.html'"></div>
+        <!--<div ng-include="'app/form/formview.html'"></div>-->
     </div>
 
     <!-- Library scripts -->
@@ -23,5 +25,6 @@
     <script src="app/formset/formsetcontroller.js"></script>
     <script src="app/form/formcontroller.js"></script>
     <script src="app/field/fieldcontroller.js"></script>
+    <script src="app/navigation/navigationcontroller.js"></script>
 </body>
 </html>

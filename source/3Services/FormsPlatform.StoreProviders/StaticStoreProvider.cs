@@ -10,13 +10,13 @@ namespace FormsPlatform.StoreProviders
 {
     public class StaticStoreProvider : IStoreProvider
     {
-        readonly List<FormSet> _items = new List<FormSet>();
+        readonly List<Formset> _items = new List<Formset>();
 
         public StaticStoreProvider()
         {
-            _items = new List<FormSet>();
+            _items = new List<Formset>();
 
-            _items.Add(new FormSet()
+            _items.Add(new Formset()
             {
                 Id = 1,
                 Title = "My first form",
@@ -46,20 +46,20 @@ namespace FormsPlatform.StoreProviders
             });
         }
 
-        public void AddFormSet(FormSet item)
+        public void AddFormset(Formset item)
         {
             item.Id = 1 + _items.Max(x => (int?)x.Id) ?? 0;
             _items.Add(item);
         }
 
-        public void DeleteFormSet(int id)
+        public void DeleteFormset(int id)
         {
             var item = _items.FirstOrDefault(x => x.Id == id);
 
             _items.Remove(item);
         }
 
-        public IEnumerable<FormSet> GetAllFormSets()
+        public IEnumerable<Formset> GetAllFormsets()
         {
             return _items;
         }
@@ -74,7 +74,7 @@ namespace FormsPlatform.StoreProviders
             throw new NotImplementedException();
         }
 
-        public FormSet GetFormSet(int id)
+        public Formset GetFormset(int id)
         {
             return _items.FirstOrDefault(x => x.Id == id);
         }

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace FormsPlatform.DomainModels.Forms
 {
-    public class FormSet
+    public class Formset
     {
-        public FormSet()
+        public Formset()
         {
             Forms = new List<Form>();
         }

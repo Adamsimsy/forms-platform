@@ -3,14 +3,13 @@
 
     angular
         .module('formsClient')
-        .controller('formSetController', formSetController);
+        .controller('formsetController', formsetController);
 
-    formSetController.$inject = ['$http']; 
+    formsetController.$inject = ['$http']; 
 
-    function formSetController($http) {
+    function formsetController($http) {
         /* jshint validthis:true */
         var vm = this;
-        vm.title = 'formSetController';
         activate();
 
         function activate() {
@@ -19,8 +18,7 @@
               success(function (data, status, headers, config) {
                   // this callback will be called asynchronously
                   // when the response is available
-                  vm.title = data[0].Title;
-                  vm.forms = data[0].Forms;
+                  vm.formSet = data[0];
               }).
               error(function (data, status, headers, config) {
                   // called asynchronously if an error occurs

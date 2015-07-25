@@ -8,11 +8,11 @@ namespace FormsPlatform.Contracts
 {
     public interface IStoreProvider
     {     
-        void AddFormSet(FormSet item);
-        void DeleteFormSet(int id);
+        void AddFormset(Formset item);
+        void DeleteFormset(int id);
 
-        IEnumerable<FormSet> GetAllFormSets();
-        FormSet GetFormSet(int id);
+        IEnumerable<Formset> GetAllFormsets();
+        Formset GetFormset(int id);
         Form GetForm(int id);
         FormField GetFormField(int id);
     }

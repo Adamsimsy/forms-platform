@@ -11,26 +11,26 @@ using FormsPlatform.Contracts;
 namespace FormsPlatform.Website.Controllers
 {
     [Route("api/[controller]")]
-    public class FormSetController : Controller
+    public class FormsetController : Controller
     {
         private IStoreProvider _iStoreProvider;
 
-        public FormSetController(IStoreProvider iStoreProvider)
+        public FormsetController(IStoreProvider iStoreProvider)
         {
             _iStoreProvider = iStoreProvider;
         }
 
         [HttpGet]
-        public IEnumerable<FormSet> GetAll()
+        public IEnumerable<Formset> GetAll()
         {
-            return _iStoreProvider.GetAllFormSets();
+            return _iStoreProvider.GetAllFormsets();
         }
 
         [HttpGet("{id:int}", Name = "GetByIdRoute")]
         public IActionResult GetById(int id)
         {
             //var item = _items.FirstOrDefault(x => x.Id == id);
-            var item = _iStoreProvider.GetFormSet(id);
+            var item = _iStoreProvider.GetFormset(id);
             if (item == null)
             {
                 return HttpNotFound();
@@ -40,7 +40,7 @@ namespace FormsPlatform.Website.Controllers
         }
 
         [HttpPost]
-        public void CreateTodoItem([FromBody] FormSet item)
+        public void CreateTodoItem([FromBody] Formset item)
         {
             if (!ModelState.IsValid)
             {
@@ -48,7 +48,7 @@ namespace FormsPlatform.Website.Controllers
             }
             else
             {
-                _iStoreProvider.AddFormSet(item);
+                _iStoreProvider.AddFormset(item);
 
                 string url = Url.RouteUrl("GetByIdRoute", new { id = item.Id },
                     Request.Scheme, Request.Host.ToUriComponent());
@@ -61,12 +61,12 @@ namespace FormsPlatform.Website.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteItem(int id)
         {
-            var item = _iStoreProvider.GetAllFormSets().FirstOrDefault(x => x.Id == id);
+            var item = _iStoreProvider.GetAllFormsets().FirstOrDefault(x => x.Id == id);
             if (item == null)
             {
                 return HttpNotFound();
             }
-            _iStoreProvider.DeleteFormSet(id);
+            _iStoreProvider.DeleteFormset(id);
             //_items.Remove(item);
             return new HttpStatusCodeResult(204); // 201 No Content
         }
