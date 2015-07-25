@@ -1,6 +1,6 @@
-﻿<div ng-controller="formController as vm">
-    <h2>{{vm.title}}</h2>
-    <div class="fields" ng-repeat="field in vm.fields">
+﻿<div>
+    <h2>{{vm.form.Title}}</h2>
+    <div class="fields" ng-repeat="field in vm.form.Fields">
         <div ng-include="'app/field/fieldview.html'"></div>
     </div>
 </div>

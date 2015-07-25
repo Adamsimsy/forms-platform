@@ -1,0 +1,6 @@
+﻿<div>
+    <h2>{{vm.title}}</h2>
+    <div class="fields" ng-repeat="formset in vm.formSets">
+        <a ui-sref="form({formsetId:formset.Id})">{{formset.Title}}</a>
+    </div>
+</div>

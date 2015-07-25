@@ -1,11 +1,33 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('formsClient', [
+    var app = angular.module('formsClient', [
         // Angular modules 
         'ngResource'
         // Custom modules 
         , 'commonServices'
-        // 3rd Party Modules      
+        // 3rd Party Modules  
+        , 'ui.router'
     ]);
+
+    app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise("/forms");
+
+        $stateProvider
+            .state("form",
+            {
+                url: "/form/:formsetId",
+                templateUrl: "app/form/formview.html",
+                controller: "formController as vm"
+            })
+            .state("forms",
+            {
+                url: "/forms",
+                templateUrl: "app/forms/formsview.html",
+                controller: "formsController as vm"
+            })
+    }
+    ]);
+
 })();
