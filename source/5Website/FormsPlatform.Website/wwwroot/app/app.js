@@ -17,17 +17,18 @@
         $stateProvider
             .state("form",
             {
-                url: "/form/:formsetId",
+                url: "/form/:formsetId/:formId",
                 templateUrl: "app/form/formview.html",
                 controller: "formController as vm",
                 resolve:
                     {
                         formsetFactory: "formsetFactory",
 
-                        formset: function (formsetFactory, $stateParams) {
+                        form: function (formsetFactory, $stateParams) {
                             var formsetId = $stateParams.formsetId;
+                            var formId = $stateParams.formId;
 
-                            return formsetFactory.get({formsetId:formsetId}).$promise;
+                            return formsetFactory.get({ formsetId: formsetId, formId: formId }).$promise;
                         }
                     }
             })

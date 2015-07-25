@@ -26,17 +26,34 @@ namespace FormsPlatform.Website.Controllers
             return _iStoreProvider.GetAllFormsets();
         }
 
-        [HttpGet("{id:int}", Name = "GetByIdRoute")]
-        public IActionResult GetById(int id)
+        [HttpGet("{formsetId:int}", Name = "GetByIdRoute")]
+        public IActionResult GetById(int formsetId)
         {
-            //var item = _items.FirstOrDefault(x => x.Id == id);
-            var item = _iStoreProvider.GetFormset(id);
+            var item = _iStoreProvider.GetFormset(formsetId);
             if (item == null)
             {
                 return HttpNotFound();
             }
 
-            return new ObjectResult(item);
+            return new ObjectResult(item.Forms.First());
+        }
+
+        [HttpGet("{formsetId:int}/{formId:int}", Name = "GetByIdAndFormIdRoute")]
+        public IActionResult GetById(int formsetId, int formId)
+        {
+            var item = _iStoreProvider.GetFormset(formsetId);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+
+            var form = item.Forms.Where(x => x.Id == formId).First();
+            if (form == null)
+            {
+                return HttpNotFound();
+            }
+
+            return new ObjectResult(form);
         }
 
         [HttpPost]
