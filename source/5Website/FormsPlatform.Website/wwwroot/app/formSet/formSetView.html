@@ -1,0 +1,6 @@
+﻿<div ng-controller="formSetController as vm">
+    <h1>{{vm.title}}</h1>
+    <div class="forms" ng-repeat="form in vm.forms">
+        <div ng-include="'app/form/formview.html'"></div>
+    </div>
+</div>

@@ -2,21 +2,25 @@
     'use strict';
 
     angular
-        .module('app')
-        .controller('controller', controller);
+        .module('formsClient')
+        .controller('formSetController', formSetController);
 
-    controller.$inject = ['$http'];
+    formSetController.$inject = ['$http']; 
 
-    function controller($http) {
-        activate();        
+    function formSetController($http) {
+        /* jshint validthis:true */
+        var vm = this;
+        vm.title = 'formSetController';
+        activate();
 
         function activate() {
 
-            $http.get('/api/todo').
+            $http.get('/api/formset').
               success(function (data, status, headers, config) {
                   // this callback will be called asynchronously
                   // when the response is available
-                  alert(data[0].Title);
+                  vm.title = data[0].Title;
+                  vm.forms = data[0].Forms;
               }).
               error(function (data, status, headers, config) {
                   // called asynchronously if an error occurs
