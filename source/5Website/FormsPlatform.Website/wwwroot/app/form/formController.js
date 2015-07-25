@@ -5,15 +5,17 @@
         .module('formsClient')
         .controller('formController', formController);
 
-    formController.$inject = ['$scope', 'formsetFactory'];
+    formController.$inject = ['formset'];
 
-    function formController($scope, formsetFactory) {
+    function formController(formset) {
 
         var vm = this;
 
-        formsetFactory.get({ id: 1 }, function (data) {
-            vm.form = data.Forms[1];
-        });
+        vm.form = formset.Forms[0];
+
+        //formsetFactory.get({ id: 1 }, function (data) {
+        //    vm.form = data.Forms[1];
+        //});
 
         activate();        
 

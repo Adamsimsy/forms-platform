@@ -6,6 +6,6 @@
         .factory('formsetFactory', ['$resource', formsetFactory]);
 
     function formsetFactory($resource) {
-        return $resource('/api/formset/:id');
+        return $resource('/api/formset/:formsetId');
     }
 })();

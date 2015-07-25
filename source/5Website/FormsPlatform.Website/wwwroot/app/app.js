@@ -19,7 +19,17 @@
             {
                 url: "/form/:formsetId",
                 templateUrl: "app/form/formview.html",
-                controller: "formController as vm"
+                controller: "formController as vm",
+                resolve:
+                    {
+                        formsetFactory: "formsetFactory",
+
+                        formset: function (formsetFactory, $stateParams) {
+                            var formsetId = $stateParams.formsetId;
+
+                            return formsetFactory.get({formsetId:formsetId}).$promise;
+                        }
+                    }
             })
             .state("forms",
             {
