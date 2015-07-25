@@ -48,7 +48,26 @@ namespace FormsPlatform.Website.Controllers
             }
             else
             {
-                _iStoreProvider.AddFormset(item);
+                _iStoreProvider.SaveFormset(item);
+
+                string url = Url.RouteUrl("GetByIdRoute", new { id = item.Id },
+                    Request.Scheme, Request.Host.ToUriComponent());
+
+                Context.Response.StatusCode = 201;
+                Context.Response.Headers["Location"] = url;
+            }
+        }
+
+        [HttpPut("{id:int}")]
+        public void UpdateTodoItem(int id, [FromBody] Formset item)
+        {
+            if (!ModelState.IsValid)
+            {
+                Context.Response.StatusCode = 400;
+            }
+            else
+            {
+                _iStoreProvider.SaveFormset(id, item);
 
                 string url = Url.RouteUrl("GetByIdRoute", new { id = item.Id },
                     Request.Scheme, Request.Host.ToUriComponent());

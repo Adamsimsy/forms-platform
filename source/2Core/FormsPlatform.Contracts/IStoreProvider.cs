@@ -8,7 +8,8 @@ namespace FormsPlatform.Contracts
 {
     public interface IStoreProvider
     {     
-        void AddFormset(Formset item);
+        void SaveFormset(Formset formset);
+        void SaveFormset(int id, Formset formset);
         void DeleteFormset(int id);
 
         IEnumerable<Formset> GetAllFormsets();

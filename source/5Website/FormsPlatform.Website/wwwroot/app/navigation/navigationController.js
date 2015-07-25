@@ -11,9 +11,9 @@
         /* jshint validthis:true */
         var vm = this;
 
-        formsetFactory.query(function (data) {
-            vm.forms = data[0].Forms;
-            vm.formSetId = data[0].Id;
+        formsetFactory.get({id : 1}, function (data) {
+            vm.forms = data.Forms;
+            vm.formSetId = data.Id;
         });
 
         activate();

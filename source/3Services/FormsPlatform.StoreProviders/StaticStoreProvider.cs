@@ -46,10 +46,10 @@ namespace FormsPlatform.StoreProviders
             });
         }
 
-        public void AddFormset(Formset item)
+        public void SaveFormset(Formset formset)
         {
-            item.Id = 1 + _items.Max(x => (int?)x.Id) ?? 0;
-            _items.Add(item);
+            formset.Id = 1 + _items.Max(x => (int?)x.Id) ?? 0;
+            _items.Add(formset);
         }
 
         public void DeleteFormset(int id)
@@ -77,6 +77,17 @@ namespace FormsPlatform.StoreProviders
         public Formset GetFormset(int id)
         {
             return _items.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void SaveFormset(int id, Formset formset)
+        {
+            var item = _items.FirstOrDefault(x => x.Id == id);
+
+            if (item != null)
+            {
+                _items.Remove(item);
+                _items.Add(formset);
+            }
         }
     }
 }
