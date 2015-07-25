@@ -5,15 +5,17 @@
         .module('formsClient')
         .controller('navigationController', navigationController);
 
-    navigationController.$inject = ['$scope', '$location'];
+    navigationController.$inject = ['$scope', '$location', 'formsetFactory'];
     
-    function navigationController($scope, $location) {
+    function navigationController($scope, $location, formsetFactory) {
         /* jshint validthis:true */
-
-  
         var vm = this;
-        vm.formSetId = $scope.$parent.vm.formSet.Id;
-        vm.forms = $scope.$parent.vm.formSet.Forms;
+
+        formsetFactory.query(function (data) {
+            vm.forms = data[0].Forms;
+            vm.formSetId = data[0].Id;
+        });
+
         activate();
 
         function activate() {
