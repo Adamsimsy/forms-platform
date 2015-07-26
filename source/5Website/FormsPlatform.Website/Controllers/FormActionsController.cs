@@ -12,8 +12,13 @@ namespace FormsPlatform.Website.Controllers
     [Route("api/[controller]")]
     public class FormActionsController : Controller
     {
-        [HttpPost]
-        public void NextOrSubmit([FromBody] Form item)
+        [HttpPost("next", Name = "Next")]
+        public void Next([FromBody] Form item)
+        {
+        }
+
+        [HttpPost("previous", Name = "Previous")]
+        public void Previous([FromBody] Form item)
         {
         }
     }

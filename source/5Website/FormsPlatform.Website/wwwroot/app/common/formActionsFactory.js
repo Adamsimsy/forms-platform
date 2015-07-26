@@ -6,6 +6,6 @@
         .factory('formActionsFactory', ['$resource', formActionsFactory]);
 
     function formActionsFactory($resource) {
-        return $resource('/api/formactions');
+        return $resource('/api/formactions/:direction');
     }
 })();

@@ -21,9 +21,14 @@
 
         function activate() { }
 
-        vm.submit = function () {
+        vm.previous = function () {
             //vm.form.$save();
-            formActionsFactory.save(vm.form);
+            formActionsFactory.save({ direction: 'previous' },vm.form);
+        }
+
+        vm.next = function () {
+            //vm.form.$save();
+            formActionsFactory.save({ direction: 'next' }, vm.form);
         }
     }
 })();
