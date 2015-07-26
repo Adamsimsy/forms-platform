@@ -1,6 +1,8 @@
 ﻿<div>
     <h2>{{vm.form.Title}}</h2>
-    <div class="fields" ng-repeat="field in vm.form.Fields">
-        <div ng-include="'app/field/fieldview.html'"></div>
-    </div>
+    <ng-form>
+        <div class="fields" ng-repeat="field in vm.form.Fields" ng-include="'app/field/fieldview.html'">
+        </div>
+    </ng-form>
+    <button ng-click="vm.submit()">Submit</button>
 </div>

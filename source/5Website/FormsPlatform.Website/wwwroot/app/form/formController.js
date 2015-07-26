@@ -5,9 +5,9 @@
         .module('formsClient')
         .controller('formController', formController);
 
-    formController.$inject = ['form'];
+    formController.$inject = ['form', 'formsetFactory', 'formActionsFactory'];
 
-    function formController(form) {
+    function formController(form, formsetFactory, formActionsFactory) {
 
         var vm = this;
 
@@ -20,5 +20,10 @@
         activate();        
 
         function activate() { }
+
+        vm.submit = function () {
+            vm.form.$save();
+            formActionsFactory.save(vm.form);
+        }
     }
 })();
