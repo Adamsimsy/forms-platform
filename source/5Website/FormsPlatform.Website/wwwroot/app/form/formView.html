@@ -3,6 +3,7 @@
     <ng-form>
         <div class="fields" ng-repeat="field in vm.form.Fields" ng-include="'app/field/fieldview.html'">
         </div>
+
+        <button ng-click="vm.submit()">Submit</button>
     </ng-form>
-    <button ng-click="vm.submit()">Submit</button>
 </div>

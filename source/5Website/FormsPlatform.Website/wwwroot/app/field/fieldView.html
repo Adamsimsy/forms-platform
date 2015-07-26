@@ -1,4 +1,4 @@
 ﻿<div ng-controller="fieldController as vm">
-    <label for="{{vm.id}}" >{{vm.label}}</label>
-    <input type="text" name="{{vm.id}}" value="{{vm.defaultValue}}">
+    <label for="{{$parent.field.Id}}" >{{$parent.field.Label}}</label>
+    <input type="text" name="{{$parent.field.Id}}" ng-model="$parent.field.Value">
 </div>

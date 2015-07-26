@@ -22,7 +22,7 @@
         function activate() { }
 
         vm.submit = function () {
-            vm.form.$save();
+            //vm.form.$save();
             formActionsFactory.save(vm.form);
         }
     }
