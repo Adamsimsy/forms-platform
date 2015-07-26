@@ -13,13 +13,21 @@ namespace FormsPlatform.Website.Controllers
     public class FormActionsController : Controller
     {
         [HttpPost("next", Name = "Next")]
-        public void Next([FromBody] Form item)
+        public IActionResult Next([FromBody] Form item)
         {
+            return new ObjectResult(new State() { FormsetId = 1, FormId = item.Id + 1 });
         }
 
         [HttpPost("previous", Name = "Previous")]
-        public void Previous([FromBody] Form item)
+        public IActionResult Previous([FromBody] Form item)
         {
+            return new ObjectResult(new State() { FormsetId = 1, FormId = item.Id - 1 });
         }
+    }
+
+    public class State
+    {
+        public int FormsetId { get; set; }
+        public int FormId { get; set; }
     }
 }

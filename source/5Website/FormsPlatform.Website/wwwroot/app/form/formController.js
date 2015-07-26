@@ -5,9 +5,9 @@
         .module('formsClient')
         .controller('formController', formController);
 
-    formController.$inject = ['form', 'formsetFactory', 'formActionsFactory'];
+    formController.$inject = ['form', 'formsetFactory', 'formActionsFactory', '$state'];
 
-    function formController(form, formsetFactory, formActionsFactory) {
+    function formController(form, formsetFactory, formActionsFactory, $state) {
 
         var vm = this;
 
@@ -23,12 +23,16 @@
 
         vm.previous = function () {
             //vm.form.$save();
-            formActionsFactory.save({ direction: 'previous' },vm.form);
+            var nextState = formActionsFactory.save({ direction: 'previous' }, vm.form, function (data) {
+                $state.go('form', { formsetId: data.FormsetId, formId: data.FormId });
+            });
         }
 
         vm.next = function () {
             //vm.form.$save();
-            formActionsFactory.save({ direction: 'next' }, vm.form);
+            var nextState = formActionsFactory.save({ direction: 'next' }, vm.form, function (data) {
+                $state.go('form', { formsetId: data.FormsetId, formId: data.FormId });
+            });
         }
     }
 })();
