@@ -27,6 +27,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FormsPlatform.SessionProvid
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FormsPlatform.StoreProviders", "3Services\FormsPlatform.StoreProviders\FormsPlatform.StoreProviders.xproj", "{1E371C05-5C7C-436D-8683-DE5C8C31210A}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FormsPlatform.FormsManager", "3Services\FormsPlatform.FormsManager\FormsPlatform.FormsManager.xproj", "{8741EBFC-55DD-47EB-91AC-06B6CD70D830}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{1E371C05-5C7C-436D-8683-DE5C8C31210A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E371C05-5C7C-436D-8683-DE5C8C31210A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E371C05-5C7C-436D-8683-DE5C8C31210A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8741EBFC-55DD-47EB-91AC-06B6CD70D830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8741EBFC-55DD-47EB-91AC-06B6CD70D830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8741EBFC-55DD-47EB-91AC-06B6CD70D830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8741EBFC-55DD-47EB-91AC-06B6CD70D830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,5 +79,6 @@ Global
 		{0BE1CD2D-1729-4DC9-B755-D0FEB141359B} = {87BEB337-4E6C-447E-943B-AF9B142A95E6}
 		{76A2B5E5-86E9-43E2-B0B1-123E80856518} = {87BEB337-4E6C-447E-943B-AF9B142A95E6}
 		{1E371C05-5C7C-436D-8683-DE5C8C31210A} = {87BEB337-4E6C-447E-943B-AF9B142A95E6}
+		{8741EBFC-55DD-47EB-91AC-06B6CD70D830} = {87BEB337-4E6C-447E-943B-AF9B142A95E6}
 	EndGlobalSection
 EndGlobal

@@ -8,6 +8,7 @@ using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using FormsPlatform.Contracts;
 using FormsPlatform.StoreProviders;
+using FormsPlatform.FormsManager;
 
 namespace FormsPlatform.Website
 {
@@ -21,6 +22,7 @@ namespace FormsPlatform.Website
             services.AddMvc();
 
             services.AddSingleton<IStoreProvider, StaticStoreProvider>();
+            services.AddSingleton<IFormsManager, DefaultManager>();
         }
 
         public void Configure(IApplicationBuilder app)
