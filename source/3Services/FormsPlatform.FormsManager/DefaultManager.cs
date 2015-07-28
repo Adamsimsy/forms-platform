@@ -19,7 +19,11 @@ namespace FormsPlatform.FormsManager
 
         public NextState Next(int formsetId, Form form)
         {
-            return _decisionProvider.Next(formsetId, form.Id, new List<KeyValuePair<string, string>>());
+            var fieldValues = new List<KeyValuePair<string, string>>();
+
+            form.Fields.ForEach(x => fieldValues.Add(new KeyValuePair<string, string>(x.Label, x.Value)));
+
+            return _decisionProvider.Next(formsetId, form.Id, fieldValues);
         }
 
         public NextState Previous(int formsetId, Form form)

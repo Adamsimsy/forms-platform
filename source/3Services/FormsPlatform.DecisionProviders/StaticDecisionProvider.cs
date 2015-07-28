@@ -30,7 +30,7 @@ namespace FormsPlatform.DecisionProviders
             {
                 FormsetId = 2,
                 Forms = {
-                    new Form() { FormId = 4, Previous = 4, Next = 5 },
+                    new Form() { FormId = 4, Previous = 4, Next = 5, FieldRules = new List<FieldRule>() { new FieldRule() { FieldToMatch = "Step 1 input field 1", ValueToMatch = "woot", NextForm = 6 } } },
                     new Form() { FormId = 5, Previous = 4, Next = 6 },
                     new Form() { FormId = 6, Previous = 5, Next = 6 }
                 }
