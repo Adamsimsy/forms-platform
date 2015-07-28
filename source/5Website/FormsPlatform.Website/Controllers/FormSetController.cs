@@ -21,13 +21,13 @@ namespace FormsPlatform.Website.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Formset> GetAll()
+        public IEnumerable<Formset> GetAllFormsets()
         {
             return _formsManager.GetAllFormsets();
         }
 
-        [HttpGet("{formsetId:int}", Name = "GetByIdRoute")]
-        public IActionResult GetById(int formsetId)
+        [HttpGet("{formsetId:int}", Name = "GetFormset")]
+        public IActionResult GetFormset(int formsetId)
         {
             var item = _formsManager.GetFormset(formsetId);
             if (item == null)
@@ -38,8 +38,8 @@ namespace FormsPlatform.Website.Controllers
             return new ObjectResult(item.Forms.First());
         }
 
-        [HttpGet("{formsetId:int}/{formId:int}", Name = "GetByIdAndFormIdRoute")]
-        public IActionResult GetById(int formsetId, int formId)
+        [HttpGet("{formsetId:int}/{formId:int}", Name = "GetForm")]
+        public IActionResult GetForm(int formsetId, int formId)
         {
             var form = _formsManager.GetForm(formsetId, formId);
             if (form == null)
