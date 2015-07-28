@@ -10,6 +10,7 @@ using FormsPlatform.Contracts;
 using FormsPlatform.StoreProviders;
 using FormsPlatform.FormsManager;
 using FormsPlatform.DecisionProviders;
+using FormsPlatform.SessionProviders;
 
 namespace FormsPlatform.Website
 {
@@ -21,10 +22,11 @@ namespace FormsPlatform.Website
         {
             // Add MVC services to the services container.
             services.AddMvc();
-
-            services.AddSingleton<IStoreProvider, StaticStoreProvider>();
+           
             services.AddSingleton<IFormsManager, DefaultManager>();
+            services.AddSingleton<IStoreProvider, StaticStoreProvider>();
             services.AddSingleton<IDecisionProvider, StaticDecisionProvider>();
+            services.AddSingleton<ISessionProvider, StaticSessionProvider>();
         }
 
         public void Configure(IApplicationBuilder app)

@@ -4978,7 +4978,8 @@
       "FormsPlatform.Contracts >= 1.0.0-*",
       "FormsPlatform.StoreProviders >= 1.0.0-*",
       "FormsPlatform.FormsManager >= 1.0.0-*",
-      "FormsPlatform.DecisionProviders >= 1.0.0-*"
+      "FormsPlatform.DecisionProviders >= 1.0.0-*",
+      "FormsPlatform.SessionProviders >= 1.0.0-*"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": []
