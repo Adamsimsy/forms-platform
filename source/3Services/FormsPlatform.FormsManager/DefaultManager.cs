@@ -10,14 +10,21 @@ namespace FormsPlatform.FormsManager
 {
     public class DefaultManager : IFormsManager
     {
+        private IDecisionProvider _decisionProvider;
+
+        public DefaultManager(IDecisionProvider decisionProvider)
+        {
+            _decisionProvider = decisionProvider;
+        }
+
         public NextState Next(int formsetId, Form form)
         {
-            return new NextState() { FormsetId = formsetId, FormId = form.Id + 1 };
+            return _decisionProvider.Next(formsetId, form.Id, new KeyValuePair<string, string>());
         }
 
         public NextState Previous(int formsetId, Form form)
         {
-            return new NextState() { FormsetId = formsetId, FormId = form.Id - 1 };
+            return _decisionProvider.Previous(formsetId, form.Id);
         }
     }
 }
