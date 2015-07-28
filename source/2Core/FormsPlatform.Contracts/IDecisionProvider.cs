@@ -8,7 +8,7 @@ namespace FormsPlatform.Contracts
 {
     public interface IDecisionProvider
     {
-        NextState Next(int formsetId, int formId, KeyValuePair<string, string> formValues);
+        NextState Next(int formsetId, int formId, List<KeyValuePair<string, string>> formValues);
         NextState Previous(int formsetId, int formId);
     }
 }
