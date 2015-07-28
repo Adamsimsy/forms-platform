@@ -41,7 +41,7 @@ namespace FormsPlatform.SessionProviders
             }
             else
             {
-                var forms = session[formsetId].Where(x => x.Id == form.Id).ToList();
+                var forms = session[formsetId];
 
                 forms.RemoveAll(x => x.Id == form.Id);
 

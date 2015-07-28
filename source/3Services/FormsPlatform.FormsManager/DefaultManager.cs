@@ -23,6 +23,9 @@ namespace FormsPlatform.FormsManager
 
         public NextState Next(int formsetId, Form form)
         {
+            //Need to validate form
+            _sessionProvider.StoreForm(formsetId, form);
+
             var fieldValues = new List<KeyValuePair<string, string>>();
 
             form.Fields.ForEach(x => fieldValues.Add(new KeyValuePair<string, string>(x.Label, x.Value)));
@@ -32,6 +35,9 @@ namespace FormsPlatform.FormsManager
 
         public NextState Previous(int formsetId, Form form)
         {
+            //Need to validate form
+            _sessionProvider.StoreForm(formsetId, form);
+
             return _decisionProvider.Previous(formsetId, form.Id);
         }
 
@@ -58,6 +64,32 @@ namespace FormsPlatform.FormsManager
         public void DeleteFormset(int id)
         {
             _iStoreProvider.DeleteFormset(id);
+        }
+
+        public Form GetForm(int formsetId, int formId)
+        {
+            var item = GetFormset(formsetId);
+            if (item == null)
+            {
+                return null;
+            }
+
+            var configuredForm = item.Forms.Where(x => x.Id == formId).First();
+            if (configuredForm == null)
+            {
+                return null;
+            }
+
+            var sessionForm = _sessionProvider.GetForm(formsetId, formId);
+
+            if (sessionForm != null)
+            {
+                //need to check if form has changed.
+                return sessionForm;
+            }
+
+
+            return configuredForm;
         }
     }
 }

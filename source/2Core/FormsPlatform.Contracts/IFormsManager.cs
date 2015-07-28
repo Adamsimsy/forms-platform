@@ -13,6 +13,7 @@ namespace FormsPlatform.Contracts
         NextState Previous(int formsetId, Form form);
         IEnumerable<Formset> GetAllFormsets();
         Formset GetFormset(int formsetId);
+        Form GetForm(int formsetId, int formId);
         void SaveFormset(Formset item);
         void SaveFormset(int id, Formset item);
         void DeleteFormset(int id);

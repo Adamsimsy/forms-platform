@@ -41,13 +41,7 @@ namespace FormsPlatform.Website.Controllers
         [HttpGet("{formsetId:int}/{formId:int}", Name = "GetByIdAndFormIdRoute")]
         public IActionResult GetById(int formsetId, int formId)
         {
-            var item = _formsManager.GetFormset(formsetId);
-            if (item == null)
-            {
-                return HttpNotFound();
-            }
-
-            var form = item.Forms.Where(x => x.Id == formId).First();
+            var form = _formsManager.GetForm(formsetId, formId);
             if (form == null)
             {
                 return HttpNotFound();
