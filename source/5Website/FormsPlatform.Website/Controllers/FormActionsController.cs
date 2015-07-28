@@ -12,16 +12,16 @@ namespace FormsPlatform.Website.Controllers
     [Route("api/[controller]")]
     public class FormActionsController : Controller
     {
-        [HttpPost("next", Name = "Next")]
-        public IActionResult Next([FromBody] Form item)
+        [HttpPost("{formsetId:int}/next", Name = "Next")]
+        public IActionResult Next([FromBody] Form item, int formsetId)
         {
-            return new ObjectResult(new State() { FormsetId = 1, FormId = item.Id + 1 });
+            return new ObjectResult(new State() { FormsetId = formsetId, FormId = item.Id + 1 });
         }
 
-        [HttpPost("previous", Name = "Previous")]
-        public IActionResult Previous([FromBody] Form item)
+        [HttpPost("{formsetId:int}/previous", Name = "Previous")]
+        public IActionResult Previous([FromBody] Form item, int formsetId)
         {
-            return new ObjectResult(new State() { FormsetId = 1, FormId = item.Id - 1 });
+            return new ObjectResult(new State() { FormsetId = formsetId, FormId = item.Id - 1 });
         }
     }
 
